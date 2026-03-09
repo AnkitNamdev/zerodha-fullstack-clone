@@ -208,14 +208,24 @@ app.post("/newOrder", async (req, res) => {
   res.json(newOrder);
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-  mongoose
-    .connect(uri)
-    .then(() => {
-      console.log("DB Connected");
-    })
-    .catch((err) => {
-      console.log(err);
+// app.listen(PORT, () => {
+//   console.log(`Server is running on port ${PORT}`);
+//   mongoose
+//     .connect(uri)
+//     .then(() => {
+//       console.log("DB Connected");
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+// });
+mongoose
+  .connect(uri)
+  .then(() => {
+    console.log("DB Connected");
+
+    app.listen(PORT, () => {
+      console.log(`Server running on ${PORT}`);
     });
-});
+  })
+  .catch((err) => console.log(err));
