@@ -49,6 +49,11 @@ function Navbar() {
                  Support
                 </Link>
               </li>         
+              <li class="nav-item">
+                <Link class="nav-link active" to="https://zerodha-dashboard-qhet.onrender.com">
+                  Dashboard
+                </Link>
+              </li>
             </ul>
             </form>
           </div>
